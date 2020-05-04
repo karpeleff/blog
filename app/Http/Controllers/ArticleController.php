@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -11,6 +12,12 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+       // $this->middleware('auth');
+    }
+
+
     public function index()
     {
         //
@@ -23,7 +30,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('article.create');
     }
 
     /**
@@ -34,7 +41,18 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        $path =$request->file('image')->store('uploads','public');
+
+        $data = new Article;
+        $data->autor = $request->autor;
+        $data->title = $request->title;
+        $data->description = $request->description;
+        $data->text = $request->text;
+        $data->image = $path;
+        $data->save();
+
     }
 
     /**
