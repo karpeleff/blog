@@ -20,7 +20,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        //
+        return view('article.index');
     }
 
     /**
@@ -41,7 +41,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+      //  dd($request);
 
         $path =$request->file('image')->store('uploads','public');
 
@@ -52,6 +52,8 @@ class ArticleController extends Controller
         $data->text = $request->text;
         $data->image = $path;
         $data->save();
+
+        return view('article.create');
 
     }
 
