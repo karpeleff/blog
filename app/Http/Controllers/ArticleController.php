@@ -14,13 +14,16 @@ class ArticleController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
 
     public function index()
     {
-        return view('article.index');
+
+       $data = Article::paginate(3);
+        return view('article.index')->with('data',$data);
+
     }
 
     /**

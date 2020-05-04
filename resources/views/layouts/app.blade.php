@@ -73,7 +73,31 @@
 
         @yield('content')
 
+        <div class="col-md-4 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">Меню</div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/articles/create">Add article</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
 
+                <div class="panel-body">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
