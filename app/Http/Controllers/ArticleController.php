@@ -77,6 +77,10 @@ class ArticleController extends Controller
     public function show($id)
     {
         //echo $id;
+
+        $this->addView($id);//добавляем  +1 просмотр статье
+
+
         $data = Article::find($id);
 
         return view('article.show')->with('data',$data);
@@ -115,4 +119,12 @@ class ArticleController extends Controller
     {
         //
     }
+
+    public function addView($id)
+    {
+        $article = Article::find($id);
+        $article->increment('viewed');
+        $article->save();
+    }
+
 }
