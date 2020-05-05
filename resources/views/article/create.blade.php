@@ -9,10 +9,10 @@
 
                 <div class="panel-body">
                     {!!Form::open()->multipart()->route('articles.store')!!}
-                    {!!Form::text('autor', 'Автор')!!}
-                    {!!Form::text('title', 'Заголовок')!!}
-                    {!!Form::textarea('description', 'Описание')!!}
-                    {!!Form::textarea('text', 'Статья')!!}
+                    {!!Form::text('autor', 'Автор')->required()!!}
+                    {!!Form::text('title', 'Заголовок')->required()!!}
+                    {!!Form::textarea('description', 'Описание')->required()!!}
+                    {!!Form::textarea('text', 'Статья')->required()!!}
                     {!!Form::select('category', 'Категория', ['один' => 'Gotham City', 'два' => 'Springfield'])!!}
                     {!!Form::checkbox(' pub', ' Опубликовать')!!}
                     {!!Form::file('image', 'Фото')!!}

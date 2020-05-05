@@ -14,6 +14,7 @@
                         <h5 class="card-header">Автор:{{$row->autor}}</h5>
                         <h5 class="card-header">Опубликовано:{{$row->created_at}}</h5>
                         <h5 class="card-header">Категория:{{$row->category}}</h5>
+                        <h5 class="card-header">Просмотры:{{$row->viewed}}</h5>
                         <div class="card-body">
                             <h5 class="card-title">Статья :{{$row->title}}</h5>
 
@@ -25,6 +26,12 @@
 
                     {{ $data->links() }}
                 </div>
+
+
+
+
+
+
             </div>
         </div>
 

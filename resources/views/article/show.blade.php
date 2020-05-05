@@ -28,5 +28,33 @@
 
                 </div>
             </div>
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Добавить комментарий</div>
+
+                    <div class="panel-body">
+                        {!!Form::open()->route('comment.store')!!}
+                        {!!Form::text('email', 'Электропочта')->required()!!}
+                        {!!Form::textarea('comment', 'Текст комментария')->required()!!}
+                        {!!Form::hidden($data->id)!!}
+                        {!!Form::submit("Send form")!!}
+                        {!!Form::close()!!}
+
+                    </div>
+                </div>
+
+
+
         </div>
+
+
+
+
+
+
+
+
+
 @endsection
