@@ -16,8 +16,7 @@
                         <h5 class="card-header">Категория:{{$row->category}}</h5>
                         <div class="card-body">
                             <h5 class="card-title">Статья :{{$row->title}}</h5>
-                            <button type="button" class="btn btn-success">Like</button>
-                            <button type="button" class="btn btn-danger">Dis</button>
+
                             <p class="card-text">{{$row->description}}</p>
                             <a href="articles/{{$row->id}}" class="btn btn-primary">Читать статью</a>
                         </div>

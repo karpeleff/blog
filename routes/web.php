@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('articles','ArticleController');
 Route::post('/articles/store','ArticleController@store');
+
+Route::resource('comment','CommentController');
+
+Route::resource('cat','CategoryController');

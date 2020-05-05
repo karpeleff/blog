@@ -13,7 +13,8 @@
                     {!!Form::text('title', 'Заголовок')!!}
                     {!!Form::textarea('description', 'Описание')!!}
                     {!!Form::textarea('text', 'Статья')!!}
-                    {!!Form::select('category', 'Категория', [1 => 'Gotham City', 2 => 'Springfield'])!!}
+                    {!!Form::select('category', 'Категория', ['один' => 'Gotham City', 'два' => 'Springfield'])!!}
+                    {!!Form::checkbox(' pub', ' Опубликовать')!!}
                     {!!Form::file('image', 'Фото')!!}
                     {!!Form::submit("Send form")!!}
                     {!!Form::close()!!}

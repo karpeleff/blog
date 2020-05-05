@@ -44,15 +44,23 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-      //  dd($request);
+       // dd($request);
 
         $path =$request->file('image')->store('uploads','public');
+
+        if(isset($request->pub))
+        {
+            $pub = 1;
+        }else{
+            $pub = 0;
+        }
 
         $data = new Article;
         $data->autor = $request->autor;
         $data->title = $request->title;
         $data->description = $request->description;
         $data->text = $request->text;
+        $data->published = $pub;
         $data->image = $path;
         $data->save();
 
