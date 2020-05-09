@@ -14,6 +14,7 @@ class ArticleController extends Controller
      */
     public function __construct()
     {
+       // $this->request = $request;
         $this->middleware('auth');
     }
 
@@ -42,7 +43,7 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
        // dd($request);
 
@@ -78,7 +79,11 @@ class ArticleController extends Controller
     {
         //echo $id;
 
+
+
         $this->addView($id);//добавляем  +1 просмотр статье
+
+
 
 
         $data = Article::find($id);
@@ -125,6 +130,8 @@ class ArticleController extends Controller
         $article = Article::find($id);
         $article->increment('viewed');
         $article->save();
+
+       // session([$id => 'viewed']);
     }
 
 }

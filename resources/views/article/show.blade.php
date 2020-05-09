@@ -38,23 +38,15 @@
                         {!!Form::open()->route('comment.store')!!}
                         {!!Form::text('email', 'Электропочта')->required()!!}
                         {!!Form::textarea('comment', 'Текст комментария')->required()!!}
-                        {!!Form::hidden($data->id)!!}
+                        {!!Form::hidden('article_id',$data->id)!!}
+                        {!!Form::hidden('published',0)!!}
                         {!!Form::submit("Send form")!!}
                         {!!Form::close()!!}
 
                     </div>
                 </div>
 
-
-
         </div>
 
-
-
-
-
-
-
-
-
 @endsection
+
