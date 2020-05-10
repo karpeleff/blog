@@ -24,4 +24,4 @@ Route::post('/articles/store','ArticleController@store');
 
 Route::resource('comment','CommentController');
 
-Route::resource('cat','CategoryController');
+Route::resource('category','CategoryController');
